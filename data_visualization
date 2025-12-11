@@ -1,1 +1,25 @@
-data visualization 
+if (!require(ggplot2)) install.packages("ggplot2")
+
+library(readr)
+
+library(ggplot2)
+
+library(scales)
+
+df <- read_csv("C:/Users/User/Downloads/team data/team 156/complete_project/members/member_A_data/cleaned_data.csv", show_col_types = FALSE)
+
+out_dir <- "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/figures"
+
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
+p1 <- ggplot(df, aes(x = apartment_living_area_sqm, y = price_in_USD)) +
+
+  geom_point(alpha = 0.35, size = 1) +
+
+  geom_smooth(method = "lm", se = TRUE, color = "black") +
+
+  labs(title = "Apartment price (USD) vs Living area (sqm)",
+
+       x = "Living area (sqm)", y = "Price (USD)") +
+
+  theme_minimal()
