@@ -13,3 +13,13 @@ df <- read_csv(
   show_col_types = FALSE
 
 )
+
+# Correlation tests
+
+pearson <- cor.test(
+
+  df$apartment_living_area_sqm,
+
+  df$price_in_USD,
+
+  method = "pearson"
