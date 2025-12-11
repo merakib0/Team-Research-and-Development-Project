@@ -43,3 +43,51 @@ df <- df_raw %>%
 
 # Report initial NA counts
 na_before <- sapply(df[c("apartment_living_area_sqm","price_in_USD")], function(x) sum(is.na(x)))
+
+# Handle obvious unit mismatches: if living area > 10000 it's probably in sq ft? flag it.
+
+# We'll keep them but record outliers; do not convert unless clear mapping known.
+
+df <- df %>%
+
+  filter(!is.na(price_in_USD) & !is.na(apartment_living_area_sqm) & apartment_living_area_sqm > 0)
+
+# Optionally remove extreme outliers (very small or huge area/price)
+
+# We'll keep them but create flags so downstream decide; do not drop by default.
+
+df <- df %>%
+
+  mutate(
+
+    area_flag_outlier = (apartment_living_area_sqm > 10000) | (apartment_living_area_sqm < 5),
+
+    price_flag_outlier = (price_in_USD > 1e8) | (price_in_USD < 100)
+
+  ) %>%
+
+  mutate(price_per_sqm = price_in_USD / apartment_living_area_sqm)
+
+# Keep only useful columns for analysis
+
+df_out <- df %>%
+
+  mutate(
+
+    city = coalesce(location, NA_character_),
+
+    apartment_bedrooms = coalesce(apartment_bedrooms, NA),
+
+    apartment_bathrooms = coalesce(apartment_bathrooms, NA)
+
+  ) %>%
+
+  select(country, city, apartment_living_area_sqm,
+
+         price_in_USD, price_per_sqm, apartment_bedrooms,
+
+         apartment_bathrooms,
+
+         area_flag_outlier, price_flag_outlier)
+
+write_csv(df_out, clean_path)
