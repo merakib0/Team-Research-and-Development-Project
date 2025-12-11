@@ -23,3 +23,13 @@ p1 <- ggplot(df, aes(x = apartment_living_area_sqm, y = price_in_USD)) +
        x = "Living area (sqm)", y = "Price (USD)") +
 
   theme_minimal()
+
+ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_vs_area.png"), p1, width = 8, height = 5)
+
+p3 <- ggplot(df, aes(x = price_per_sqm)) + geom_histogram(bins = 50) +
+
+  labs(title = "Distribution of price per sqm", x = "Price per sqm (USD)", y = "Count") +
+
+  theme_minimal()
+
+ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_per_sqm_hist.png"), p3, width = 7, height = 4)
