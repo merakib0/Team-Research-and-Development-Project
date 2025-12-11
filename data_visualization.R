@@ -1,35 +1,41 @@
+# -------------------------------------------------------------------
+# Visualising correlation: apartment living area vs listed price
+# -------------------------------------------------------------------
+
+# Install & load packages ----------------------------------------------------
 if (!require(ggplot2)) install.packages("ggplot2")
 
 library(readr)
-
 library(ggplot2)
-
+library(dplyr)
 library(scales)
 
-df <- read_csv("C:/Users/User/Downloads/team data/team 156/complete_project/members/member_A_data/cleaned_data.csv", show_col_types = FALSE)
+# 1. Load data ---------------------------------------------------------------
 
-out_dir <- "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/figures"
+df <- read_csv(
+  "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_A_data/cleaned_data.csv",
+  show_col_types = FALSE
+)
 
-dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+# 2. Prepare data for a clearer plot -----------------------------------------
+# - Remove missing values
+# - Express price in millions of USD
+# - Trim extreme outliers (top 1%) in both variables
 
-p1 <- ggplot(df, aes(x = apartment_living_area_sqm, y = price_in_USD)) +
+df_plot <- df |>
+  filter(
+    !is.na(apartment_living_area_sqm),
+    !is.na(price_in_USD)
+  ) |>
+  mutate(
+    price_million = price_in_USD / 1e6
+  )
 
-  geom_point(alpha = 0.35, size = 1) +
+p99_price <- quantile(df_plot$price_million, 0.99, na.rm = TRUE)
+p99_area  <- quantile(df_plot$apartment_living_area_sqm, 0.99, na.rm = TRUE)
 
-  geom_smooth(method = "lm", se = TRUE, color = "black") +
-
-  labs(title = "Apartment price (USD) vs Living area (sqm)",
-
-       x = "Living area (sqm)", y = "Price (USD)") +
-
-  theme_minimal()
-
-ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_vs_area.png"), p1, width = 8, height = 5)
-
-p3 <- ggplot(df, aes(x = price_per_sqm)) + geom_histogram(bins = 50) +
-
-  labs(title = "Distribution of price per sqm", x = "Price per sqm (USD)", y = "Count") +
-
-  theme_minimal()
-
-ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_per_sqm_hist.png"), p3, width = 7, height = 4)
+df_plot <- df_plot |>
+  filter(
+    price_million <= p99_price,
+    apartment_living_area_sqm <= p99_area
+  )
