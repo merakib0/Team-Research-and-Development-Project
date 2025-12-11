@@ -91,3 +91,47 @@ df_out <- df %>%
          area_flag_outlier, price_flag_outlier)
 
 write_csv(df_out, clean_path)
+
+# Write cleaning report
+
+report_lines <- c(
+
+  paste0("Cleaning report generated: ", Sys.time()),
+
+  paste0("Original rows: ", orig_nrow),
+
+  paste0("Original columns: ", paste(orig_cols, collapse = ", ")),
+
+  "NA counts before parse (approx):",
+
+  paste0("  apartment_living_area: ", na_before["apartment_living_area_sqm"]),
+
+  paste0("  price_in_USD: ", na_before["price_in_USD"]),
+
+  paste0("Rows after filtering missing area or price: ", nrow(df_out)),
+
+  "Outlier flags summary:",
+
+  paste0("  area_flag_outlier count: ", sum(df_out$area_flag_outlier, na.rm = TRUE)),
+
+  paste0("  price_flag_outlier count: ", sum(df_out$price_flag_outlier, na.rm = TRUE)),
+
+  "",
+
+  "Notes:",
+
+  "- apartment_living_area parsed by removing non-digit characters; commas treated as decimal separators.",
+
+  "- price_in_USD parsed similarly.",
+
+  "- Rows with missing price or area dropped (documented above).",
+
+  "- Extreme values are flagged but not removed; please state handling decision in report.",
+
+  ""
+
+)
+
+write_lines(report_lines, report_path)
+
+cat("Cleaning finished.\nClean file saved to:", clean_path, "\nReport saved to:", report_path, "\n")
