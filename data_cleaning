@@ -25,12 +25,13 @@ orig_cols <- names(df_raw)
 # Helper to parse numeric from strings like "110 m²", "1,200", "1 200"
 parse_num <- function(x) {
   x2 <- as.character(x)
-  x2 <- str_replace_all(x2, "\\s+", "")        # remove spaces
-  x2 <- str_replace_all(x2, ",", ".")          # comma -> dot
+  x2 <- str_replace_all(x2, "\\s+", "")   # remove spaces     
+  x2 <- str_replace_all(x2, "\\.", ",")        
   # Extract the first valid number pattern to avoid coercion warnings
   num_str <- str_extract(x2, "-?\\d+\\.?\\d*")
   as.numeric(num_str)
 }
+
 
 df <- df_raw %>%
   mutate(
