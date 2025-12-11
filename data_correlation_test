@@ -35,3 +35,13 @@ spearman <- cor.test(
   exact = FALSE   # <- removes the "ties" warning
 
 )
+
+# Linear model
+
+lm_model <- lm(price_in_USD ~ apartment_living_area_sqm, data = df)
+
+# Output directory
+
+out_dir <- "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_C_stats"
+
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
