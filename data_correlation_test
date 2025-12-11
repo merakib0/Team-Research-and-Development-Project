@@ -23,3 +23,15 @@ pearson <- cor.test(
   df$price_in_USD,
 
   method = "pearson"
+
+spearman <- cor.test(
+
+  df$apartment_living_area_sqm,
+
+  df$price_in_USD,
+
+  method = "spearman",
+
+  exact = FALSE   # <- removes the "ties" warning
+
+)
