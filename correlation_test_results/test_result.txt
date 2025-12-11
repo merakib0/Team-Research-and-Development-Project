@@ -1,0 +1,27 @@
+Call:
+
+lm(formula = price_in_USD ~ apartment_living_area_sqm, data = df)
+
+Residuals:
+
+     Min       1Q   Median       3Q      Max 
+
+ -407306  -250536  -185915   -22026 21434827 
+
+Coefficients:
+
+                           Estimate Std. Error t value Pr(>|t|)    
+
+(Intercept)               3.035e+05  4.481e+03  67.736   <2e-16 ***
+
+apartment_living_area_sqm 9.681e-02  6.814e-02   1.421    0.155    
+
+---
+
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 739000 on 27196 degrees of freedom
+
+Multiple R-squared:  7.422e-05, Adjusted R-squared:  3.746e-05 
+
+F-statistic: 2.019 on 1 and 27196 DF,  p-value: 0.1554
