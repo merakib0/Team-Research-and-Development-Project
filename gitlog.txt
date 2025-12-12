@@ -1,0 +1,99 @@
+d2d2210 | 2025-12-12 | merakib0 | Rename Part 03: Visualization  3.1 Appropriate Graphs for the RQ.md to Part 03 Visualization  3.1 Appropriate Graphs for the RQ.md
+92587df | 2025-12-12 | merakib0 | Fix formatting in visualization report section
+bfd14aa | 2025-12-12 | merakib0 | Fix formatting in visualization report section
+17bc24e | 2025-12-12 | merakib0 | Fix formatting issue in conclusions section
+4b2f9ce | 2025-12-12 | merakib0 | Fix formatting issue in visualization report section
+6a56af4 | 2025-12-12 | merakib0 | Fix formatting issue in conclusions section
+b1efb23 | 2025-12-12 | merakib0 | Rename 5. Evaluation – group’s experience at 7COM1079 5.1 What went well (≈75 words).md to 5. Evaluation – group’s experience at 7COM1079 5.1 What went well.md
+ce36821 | 2025-12-12 | merakib0 | Rename 3.3 Useful information for the data understanding (≈50 words).md to 3.3 Useful information for the data understanding.md
+94e3e18 | 2025-12-12 | merakib0 | Rename 1. Introduction 1.1 Problem statement and research motivation (≈100 words).md to 1. Introduction 1.1 Problem statement and research motivation .md
+6540004 | 2025-12-12 | merakib0 | Rename 6. Conclusions 6.1 Results explained (≈75 words).md to 6.      Conclusions 6.1 Results explained.md
+e744cb8 | 2025-12-12 | tanzir232 | Create 6.3 Reasons for implementations and limitations.md
+766568d | 2025-12-12 | Amir-Hossain911 | Create 7. Reference.md
+fce0189 | 2025-12-12 | MdRahmanBappy | Create 6.2 Interpretation of the results.md
+f70cd67 | 2025-12-12 | Amir-Hossain911 | Create 5.6 Comment on the GitHub log output.md
+8c92912 | 2025-12-12 | iamnhasan7 | Create 6.   Conclusions 6.1 Results explained (≈75 words).md
+1c4fca0 | 2025-12-12 | tanzir232 | Rename Part 03: Visualization - 3.1 Appropriate Graphs for the RQ to Part 03: Visualization - 3.1 Appropriate Graphs for the RQ.md
+36baa77 | 2025-12-12 | Amir-Hossain911 | Rename 5.3 Group’s time management to 5.3 Group’s time management.md
+95b1529 | 2025-12-12 | tanzir232 | Rename 5.2 Points for improvement to 5.2 Points for improvement.md
+c805d02 | 2025-12-12 | Amir-Hossain911 | Rename 4.1 Statistical test used to test the hypotheses and output to 4.1 Statistical test used to test the hypotheses and output.md
+b121d49 | 2025-12-12 | Amir-Hossain911 | Rename 3.2 Additional information relating to understanding the data to 3.2 Additional information relating to understanding the data.md
+1995248 | 2025-12-12 | Amir-Hossain911 | Rename 2_Background_Research_2.1_Research_papers to 2_Background_Research_2.1_Research_papers.md
+17d4d48 | 2025-12-12 | tanzir232 | Create 5.4 Projects Overall Judgement.md
+142bd75 | 2025-12-12 | Amir-Hossain911 | Create 5.3 Group’s time management
+64cd6da | 2025-12-12 | tanzir232 | Update 4.2 Whether the null hypothesis rejected is or not.md
+abb981a | 2025-12-12 | MdRahmanBappy | 5.2 Points for improvement
+6504fbe | 2025-12-12 | tanzir232 | Create 4.2 Whether the null hypothesis rejected is or not.md
+0990aa1 | 2025-12-12 | iamnhasan7 | Create 5. Evaluation – group’s experience at 7COM1079 5.1 What went well (≈75 words).md
+aac6d4a | 2025-12-12 | MdRahmanBappy | Rename Statistical test used to test the hypotheses and output to 4.1 Statistical test used to test the hypotheses and output
+b7691b0 | 2025-12-12 | MdRahmanBappy | Create Statistical test used to test the hypotheses and output
+2b1203b | 2025-12-12 | Amir-Hossain911 | Rename 3.1 Additional information relating to understanding the data to 3.2 Additional information relating to understanding the data
+474966b | 2025-12-12 | iamnhasan7 | Create 3.3 Useful information for the data understanding (≈50 words).md
+420fbbb | 2025-12-12 | Amir-Hossain911 | Create 3.1 Additional information relating to understanding the data
+65a9817 | 2025-12-12 | Amir-Hossain911 | Create Part 03: Visualization - 3.1 Appropriate Graphs for the RQ
+d625dfe | 2025-12-12 | tanzir232 | Create 2.2 Why this research question is important (research gap).md
+0a1a1e6 | 2025-12-12 | merakib0 | Merge branch 'main' of https://github.com/merakib0/Team-Research-and-Development-Project
+12e85fa | 2025-12-12 | merakib0 | new updated figure for dataset visualization
+06ecd0e | 2025-12-12 | MdRahmanBappy | Update data_visualization.R
+256301a | 2025-12-12 | Amir-Hossain911 | Create 2_Background_Research_2.1_Research_papers
+b3175d4 | 2025-12-12 | MdRahmanBappy | Create 1.4 Null hypothesis and Alternative hypothesis.md
+34e7cb1 | 2025-12-12 | MdRahmanBappy | Create 1.3 Research question.md
+0e2282b | 2025-12-12 | tanzir232 | Update data_visualization.R
+425a250 | 2025-12-12 | iamnhasan7 | Update data_visualization.R
+71c8e9c | 2025-12-12 | Amir-Hossain911 | Update data_visualization.R
+06da5f0 | 2025-12-12 | merakib0 | Fix message formatting for figures folder creation
+ef170f9 | 2025-12-12 | merakib0 | Create figures directory for visualizations
+cb6300c | 2025-12-12 | iamnhasan7 | Create 1.2 The data set (≈75 words).md
+636c592 | 2025-12-12 | iamnhasan7 | Create 1. Introduction 1.1 Problem statement and research motivation (≈100 words).md
+5edcd8f | 2025-12-12 | iamnhasan7 | Create readme.md
+00972c5 | 2025-12-11 | merakib0 | Update the code for more clear and clean visibility
+5d02910 | 2025-12-11 | iamnhasan7 | Update data_visualization.R
+7c2c269 | 2025-12-11 | merakib0 | Merge branch 'main' of https://github.com/merakib0/Team-Research-and-Development-Project
+315ac64 | 2025-12-11 | merakib0 | new updated figure
+7ab9622 | 2025-12-11 | tanzir232 | Add files via upload
+b026861 | 2025-12-11 | merakib0 | Delete World University Rankings 2023.csv
+5320f2e | 2025-12-11 | Amir-Hossain911 | Add files via upload
+8841c81 | 2025-12-11 | Amir-Hossain911 | Add files via upload
+82adc41 | 2025-12-11 | Amir-Hossain911 | Add files via upload
+94307ed | 2025-12-11 | Amir-Hossain911 | Add files via upload
+a06f17e | 2025-12-11 | MdRahmanBappy | Add files via upload
+22bc449 | 2025-12-11 | MdRahmanBappy | Add files via upload
+6f220e0 | 2025-12-11 | iamnhasan7 | Add files via upload
+64a09bb | 2025-12-11 | iamnhasan7 | Add files via upload
+b18da65 | 2025-12-11 | iamnhasan7 | Add files via upload
+ecc2df3 | 2025-12-11 | iamnhasan7 | Add files via upload
+c43a299 | 2025-12-11 | tanzir232 | Create readme.md
+9f1067e | 2025-12-11 | tanzir232 | Code file was submitted in txt. changed it to R
+3da5e58 | 2025-12-11 | merakib0 | Merge branch 'main' of https://github.com/merakib0/Team-Research-and-Development-Project
+4720bb8 | 2025-12-11 | merakib0 | load dataset
+247dd68 | 2025-12-11 | MdRahmanBappy | correction of data_cleaning
+9b4b874 | 2025-12-11 | tanzir232 | Update data_cleaning
+b20c312 | 2025-12-11 | tanzir232 | Delete correlation_test_results/Spearman's rank correlation
+9f55853 | 2025-12-11 | tanzir232 | Add files via upload
+e492ec0 | 2025-12-11 | MdRahmanBappy | Delete correlation_test_results/Pearson's product-moment correlation
+6f73803 | 2025-12-11 | MdRahmanBappy | Add files via upload
+b5d7c9f | 2025-12-11 | merakib0 | cleaned_data
+fa8278e | 2025-12-11 | iamnhasan7 | Add files via upload
+a4c714f | 2025-12-11 | Amir-Hossain911 | Add files via upload
+9bc2268 | 2025-12-11 | tanzir232 | Create Spearman's rank correlation
+671ede5 | 2025-12-11 | merakib0 | Add Pearson's correlation test results
+9520992 | 2025-12-11 | merakib0 | Delete correlation_test_results
+9e3aec9 | 2025-12-11 | merakib0 | Create correlation_test_results
+aec3ea8 | 2025-12-11 | merakib0 | Delete figuers_from_data  directory
+a8f3512 | 2025-12-11 | merakib0 | Add files via upload
+0b2d469 | 2025-12-11 | merakib0 | Create visualization
+f78cc8c | 2025-12-11 | merakib0 | Update data_correlation_test
+88327fd | 2025-12-11 | MdRahmanBappy | Update data_correlation_test
+39edbb3 | 2025-12-11 | iamnhasan7 | Update data_correlation_test
+3348bad | 2025-12-11 | Amir-Hossain911 | Update data_correlation_test
+88396b4 | 2025-12-11 | tanzir232 | Create data_correlation_test
+9e2c1d1 | 2025-12-11 | iamnhasan7 | Update data_visualization
+2b44d5b | 2025-12-11 | Amir-Hossain911 | Update data_visualization
+76b0aca | 2025-12-11 | merakib0 | Add initial data visualization code
+dacc4e7 | 2025-12-11 | tanzir232 | Update data_cleaning
+000d86c | 2025-12-11 | MdRahmanBappy | Update data_cleaning
+04c972b | 2025-12-11 | merakib0 | Add data cleaning script for real estate dataset
+e6f8c15 | 2025-12-11 | merakib0 | Delete member a directory
+026e856 | 2025-12-11 | merakib0 | data cleaning from the given csv file
+2f7f1f9 | 2025-12-11 | merakib0 | data cleaning from the given csv file
+
