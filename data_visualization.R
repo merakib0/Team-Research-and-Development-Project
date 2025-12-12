@@ -29,3 +29,14 @@ ggplot(df_plot, aes(apartment_living_area_sqm, price_in_USD/1e6)) +
   labs(title = "Area vs Listed Price",
        subtitle = paste("Pearson r =", r, "(n =", nrow(df_plot), ", 99 % trim)")) +
   ggsave("figures/scatter_area_vs_price_5M_steps_trim99.png", width = 8, height = 5, dpi = 300)
+
+# 04_hist_price_per_sqm_log.R
+library(ggplot2); library(scales)
+df <- read_csv("cleaned_data.csv") |>
+  mutate(ppsqm = price_in_USD / apartment_living_area_sqm)
+
+ggplot(df, aes(ppsqm)) +
+  geom_histogram(bins = 60, color = "white") +
+  scale_x_log10(labels = label_dollar()) +
+  labs(title = "Price per sqm (log scale)") +
+  ggsave("figures/hist_price_per_sqm_log.png", width = 8, height = 5, dpi = 300)
