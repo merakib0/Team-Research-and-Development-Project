@@ -1,4 +1,4 @@
-### A.1 Repository map (table)
+### Repository map (table)
 
 | Path / Item | Type | What it contains / purpose |
 |---|---|---|
