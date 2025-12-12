@@ -1,9 +1,9 @@
-# 01_repo_setup.R
+# repo_setup.R
 # Creates shared folder once
 dir.create("figures", showWarnings = FALSE)
 message(" figures/ folder ready")
 
-# 02_load_clean_data.R
+# load_clean_data.R
 # Produces cleaned_data.csv for everyone
 library(readr); library(dplyr)
 df <- read_csv("member_A_data.csv") |>
@@ -13,7 +13,7 @@ df <- read_csv("member_A_data.csv") |>
 write_csv(df, "cleaned_data.csv")
 message("cleaned_data.csv written")
 
-# 03_scatter_area_vs_price.R
+# scatter_area_vs_price.R
 library(ggplot2); library(scales)
 df <- read_csv("cleaned_data.csv")
 df_plot <- df |>
@@ -30,7 +30,7 @@ ggplot(df_plot, aes(apartment_living_area_sqm, price_in_USD/1e6)) +
        subtitle = paste("Pearson r =", r, "(n =", nrow(df_plot), ", 99 % trim)")) +
   ggsave("figures/scatter_area_vs_price_5M_steps_trim99.png", width = 8, height = 5, dpi = 300)
 
-# 04_hist_price_per_sqm_log.R
+# hist_price_per_sqm_log.R
 library(ggplot2); library(scales)
 df <- read_csv("cleaned_data.csv") |>
   mutate(ppsqm = price_in_USD / apartment_living_area_sqm)
@@ -40,3 +40,13 @@ ggplot(df, aes(ppsqm)) +
   scale_x_log10(labels = label_dollar()) +
   labs(title = "Price per sqm (log scale)") +
   ggsave("figures/hist_price_per_sqm_log.png", width = 8, height = 5, dpi = 300)
+
+# hist_listed_price_log.R
+library(ggplot2); library(scales)
+df <- read_csv("cleaned_data.csv")
+
+ggplot(df, aes(price_in_USD)) +
+  geom_histogram(bins = 60, color = "white") +
+  scale_x_log10(labels = label_dollar()) +
+  labs(title = "Listed price (log scale)") +
+  ggsave("figures/hist_listed_price_log.png", width = 8, height = 5, dpi = 300)                     
