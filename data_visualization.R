@@ -1,35 +1,52 @@
-if (!require(ggplot2)) install.packages("ggplot2")
+# repo_setup.R
+# Creates shared folder once
+dir.create("figures", showWarnings = FALSE)
+message(" figures/ folder ready")
 
-library(readr)
+# load_clean_data.R
+# Produces cleaned_data.csv for everyone
+library(readr); library(dplyr)
+df <- read_csv("member_A_data.csv") |>
+  mutate(across(c(apartment_living_area_sqm, price_in_USD), as.numeric)) |>
+  filter(if_all(c(apartment_living_area_sqm, price_in_USD),
+                ~ is.finite(.) && . > 0))
+write_csv(df, "cleaned_data.csv")
+message("cleaned_data.csv written")
 
-library(ggplot2)
+# scatter_area_vs_price.R
+library(ggplot2); library(scales)
+df <- read_csv("cleaned_data.csv")
+df_plot <- df |>
+  filter(price_in_USD <= quantile(price_in_USD, .99),
+         apartment_living_area_sqm <= quantile(apartment_living_area_sqm, .99))
+r <- round(cor(df_plot$apartment_living_area_sqm, df_plot$price_in_USD/1e6), 2)
 
-library(scales)
+ggplot(df_plot, aes(apartment_living_area_sqm, price_in_USD/1e6)) +
+  geom_point(alpha = .25) +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_y_continuous(breaks = seq(0, ceiling(max(df_plot$price_in_USD/1e6)/5)*5, 5),
+                     labels = function(x) paste0(x, "M")) +
+  labs(title = "Area vs Listed Price",
+       subtitle = paste("Pearson r =", r, "(n =", nrow(df_plot), ", 99 % trim)")) +
+  ggsave("figures/scatter_area_vs_price_5M_steps_trim99.png", width = 8, height = 5, dpi = 300)
 
-df <- read_csv("C:/Users/User/Downloads/team data/team 156/complete_project/members/member_A_data/cleaned_data.csv", show_col_types = FALSE)
+# hist_price_per_sqm_log.R
+library(ggplot2); library(scales)
+df <- read_csv("cleaned_data.csv") |>
+  mutate(ppsqm = price_in_USD / apartment_living_area_sqm)
 
-out_dir <- "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/figures"
+ggplot(df, aes(ppsqm)) +
+  geom_histogram(bins = 60, color = "white") +
+  scale_x_log10(labels = label_dollar()) +
+  labs(title = "Price per sqm (log scale)") +
+  ggsave("figures/hist_price_per_sqm_log.png", width = 8, height = 5, dpi = 300)
 
-dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+# hist_listed_price_log.R
+library(ggplot2); library(scales)
+df <- read_csv("cleaned_data.csv")
 
-p1 <- ggplot(df, aes(x = apartment_living_area_sqm, y = price_in_USD)) +
-
-  geom_point(alpha = 0.35, size = 1) +
-
-  geom_smooth(method = "lm", se = TRUE, color = "black") +
-
-  labs(title = "Apartment price (USD) vs Living area (sqm)",
-
-       x = "Living area (sqm)", y = "Price (USD)") +
-
-  theme_minimal()
-
-ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_vs_area.png"), p1, width = 8, height = 5)
-
-p3 <- ggplot(df, aes(x = price_per_sqm)) + geom_histogram(bins = 50) +
-
-  labs(title = "Distribution of price per sqm", x = "Price per sqm (USD)", y = "Count") +
-
-  theme_minimal()
-
-ggsave(file.path(out_dir, "C:/Users/User/Downloads/team data/team 156/complete_project/members/member_B_viz/price_per_sqm_hist.png"), p3, width = 7, height = 4)
+ggplot(df, aes(price_in_USD)) +
+  geom_histogram(bins = 60, color = "white") +
+  scale_x_log10(labels = label_dollar()) +
+  labs(title = "Listed price (log scale)") +
+  ggsave("figures/hist_listed_price_log.png", width = 8, height = 5, dpi = 300)                     
