@@ -1,0 +1,1 @@
+The R script produces a scatterplot of apartment area versus listed price (in millions of USD) with a fitted linear regression and the Pearson correlation value, directly illustrating their relationship. It also creates a log-scaled histogram of price per square metre to show the distribution and any skew.
